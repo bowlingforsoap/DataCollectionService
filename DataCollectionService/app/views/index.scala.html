@@ -1,0 +1,60 @@
+@main("Responses collecting") {
+
+<h1>Create a response</h1>
+<div class="container-fluid" ng-controller="IndexController">
+	<div class="row">
+		<form method="post" action="">
+			<div ng-repeat="field in allFields">
+				<div ng-switch on="field.type" ng-show="{{field.active}}">
+					<div ng-switch-when="Textarea">
+						{{field.label}}
+						<span ng-show="{{field.required}}">*</span>
+						<p />
+						<input type="text" name="{{field.label}}">
+						<p />
+					</div>
+					<div ng-switch-when="Radio button">
+						{{field.label}}
+						<span ng-show="{{field.required}}">*</span>
+						<p />
+						<div ng-repeat="option in field.options">
+							<input type="radio" name="{{field.label}}" value="{{option}}">{{option}}
+							<p />
+						</div>
+						<p />
+					</div>
+					<div ng-switch-when="Checkbox">
+						{{field.label}}
+						<span ng-show="{{field.required}}">*</span>
+						<p />
+						<input ng-repeat="option in field.options" type="checkbox"
+							name="{{field.label}}" value="{{option}}">
+						<p />
+					</div>
+					<div ng-switch-when="Combobox">
+						{{field.label}}
+						<span ng-show="{{field.required}}">*</span>
+						<p />
+						<select name="{{field.label}}[]">
+							<option ng-repeat="option in field.options">{{option}}</option>
+						</select>
+						<p />
+					</div>
+					<div ng-switch-when="Date">
+						{{field.label}}
+						<span ng-show="{{field.required}}">*</span>
+						<p />
+						<input type="date">
+						<p />
+					</div>
+				</div>
+			</div>
+			<div>
+				<button>Submit</button>
+				<input type="reset">
+			</div>
+		</form>
+	</div>
+</div>
+
+}

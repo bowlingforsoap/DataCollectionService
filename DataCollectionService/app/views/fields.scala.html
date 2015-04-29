@@ -1,0 +1,37 @@
+@main("Fields") {
+
+<div class="container-fluid">
+	<h1>Fields</h1>
+	<p />
+	<a href="/addField"><button type="button">Add Field</button></a>
+	<p />
+	<div class="row" ng-controller="FieldsController">
+		<table>
+			<tr class="titles">
+				<th>Label</th>
+				<th>Type</th>
+				<th>Required</th>
+				<th>Is Active</th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr ng-repeat="field in allFields">
+				<th>{{field.label}}</th>
+				<th>{{field.type}}</th>
+				<th><input type="checkbox" disabled="disabled"
+					checked="checked" ng-show="{{field.required}}"> 
+					<input
+					type="checkbox" disabled="disabled"
+					ng-show="{{!field.required}}"></th>
+				<th><input type="checkbox" disabled="disabled"
+					checked="checked" ng-show="{{field.active}}">
+					<input type="checkbox" disabled="disabled" ng-show="{{!field.active}}">
+					</th>
+				<th><a href="/fields/{{field.id}}">Edit</a></th>
+				<th><a href="/fields/delete/{{field.id}}">Delete</a></th>
+			</tr>
+		</table>
+	</div>
+</div>
+
+}

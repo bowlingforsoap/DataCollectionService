@@ -1,0 +1,76 @@
+@(uuid: Long) @main("Create/Edit field") {
+
+
+<h1>Create/Edit Field</h1>
+<form method="POST" action="@routes.Application.createOrEditFieldPost()"
+	ng-controller="CreateOrEditFieldController">
+	<input type="hidden" value="@uuid" id="uuid" name="id">
+	<input type="hidden" id="present-in-db" name="present-in-db">
+	<div class="row">
+		<div class="col-sm-6">
+			Label * :<br /> <input type="text" required="required" id ="label" name="label">
+		</div>
+		<p />
+
+		<div class="col-sm-6">
+			<input type="checkbox" name="required" value="required" id="required">Required
+		</div>
+		<p />
+	</div>
+	<p />
+
+	<div class="row">
+		<div class="col-sm-6">
+			Type* :<br /> <select size="6" name="type" required="required"
+				id="types">
+				<option ng-repeat="type in types" value="{{type}}"
+					ng-click='changeSelType()'>{{type}}</option>
+			</select>
+		</div>
+		<p />
+
+		<div class="col-sm-6">
+			<input type="checkbox" name="active" value="active" id="active">Is Active
+		</div>
+		<p />
+	</div>
+	<p />
+
+	<div class="row" ng-hide="hideOptions">
+		<div class="col-sm-6">
+			Options* :<br /> <input type="text" id="option"> <br />
+			<button type="button" ng-click="insertOption()">Insert
+				option</button>
+			<button type="button" ng-click="removeOption()">Remove</button>
+			<br /> <select size="4" name="options[]" required="required"
+				id="options" name="option" multiple="multiple">
+				<option ng-hide="{{true}}" name="option-stub" value="option-stub"></option>
+				<option ng-repeat="option in options">{{option}}</option>
+			</select>
+		</div>
+		<div class="col-sm-6"></div>
+	</div>
+	<p />
+
+	<div class="row">
+		<div class="col-sm-6">
+			<button type="submit">Save</button>
+		</div>
+
+		<div class="col-sm-6">
+			<input type="reset" value="Cancel">
+		</div>
+		<p />
+	</div>
+	<p />
+</form>
+
+<script type="text/javascript">
+<!--
+	function removeOption() {
+		window.alert("я зделял Delete");
+	}
+//-->
+</script>
+
+}

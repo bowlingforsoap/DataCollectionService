@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+GET		/json						controllers.Application.serveIndexJson()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+#Responses page
+GET		/responses					controllers.Application.responses()
+GET		/responses/json				controllers.Application.serveResponsesJson()
+
+#Fields page
+GET		/fields						controllers.Application.fields()
+GET		/fields/json				controllers.Application.serveFieldsJson()
+GET		/addField					controllers.Application.addField()
+#Delete
+GET		/fields/delete/:id			controllers.Application.deleteField(id: Long)
+
+#Create/Edit Field
+GET		/fields/:id			controllers.Application.createOrEditField(id: Long)
+GET		/fields/:id/json	controllers.Application.serveCreateOrEditFieldJson(id: Long)
+POST	/fields				controllers.Application.createOrEditFieldPost()

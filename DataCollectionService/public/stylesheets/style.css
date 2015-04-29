@@ -1,0 +1,35 @@
+html {
+	background-color: #B8292F;
+}
+
+.navbar-default {
+	background-color: #B8292F;
+}
+
+.navbar .nav > li > a {
+	color: white;
+	text-shadow: black;
+	text-indent: 10px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.row {
+	border-left: 10px;
+}
+
+table {
+	width: 100%;
+	border: 4px double gray;
+	border-collapse: separate;
+}
+
+th {
+	text-align: center; 
+	padding: 5px;
+	border: 1px solid gray; 
+}
+
+.titles {
+	color: gray;
+}

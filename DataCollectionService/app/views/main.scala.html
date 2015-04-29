@@ -1,0 +1,93 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html ng-app="dataColl">
+<!-- Angular -->
+<script
+	src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js'></script>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>@title</title>
+<link rel="shortcut icon" type="image/png"
+	href='@routes.Assets.at("images/favicon.png")'>
+
+<script type="text/javascript"
+	src='@routes.Assets.at("javascripts/app.js")'></script>
+
+<!-- Bootstrap -->
+<link href='@routes.Assets.at("bootstrap/css/bootstrap.css")'
+	rel="stylesheet">
+<link href='@routes.Assets.at("stylesheets/style.css")' rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	    		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	   		   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	   		  <![endif]-->
+
+</head>
+<body>
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-default">
+		<div class="row">
+
+			<div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a href="/"><img class="logo" alt="logo"
+						src='@routes.Assets.at("images/logo.png")' /> </a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="/fields" class="nav-text">Fields</a></li>
+						<li><a href="/responses" class="nav-text">Responses <span
+								class="badge">4</span></a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+
+	<!-- all Content goes here -->
+	<div class="container-fluid">
+		<div class="row" id="content">
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">@content</div>
+				<div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+			</div>
+		</div>
+		<h1></h1>
+	</div>
+	
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src='@routes.Assets.at("bootstrap/js/bootstrap.js")'></script>
+</body>
+</html>
